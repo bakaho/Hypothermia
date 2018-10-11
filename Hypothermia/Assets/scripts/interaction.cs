@@ -38,15 +38,16 @@ public class interaction : MonoBehaviour {
             //Vector3 diff = player2Pos.position - player1Pos.position;
             //Vector3 projected = Vector3.ProjectOnPlane(diff, Camera.main.transform.forward);
             //origin.transform.rotation = Quaternion.LookRotation(projected);
-            //player1.GetComponent<Rigidbody>().AddForce(((player2Pos.position - player1Pos.position).normalized) * 30);
+            player2.GetComponent<Rigidbody>().AddForce(((player2Pos.position - player1Pos.position).normalized) * 30);
+            player1.GetComponent<Rigidbody>().AddForce(((player1Pos.position - player2Pos.position).normalized) * 30);
 
-            moveDir = (player2Pos.position - player1Pos.position).normalized;
-            moveDir = transform.TransformDirection(moveDir);
-            speed = speed + accleration;
-            moveDir *= speed;
-            player2.GetComponent<CharacterController>().Move(moveDir * Time.deltaTime);
-            player1.GetComponent<CharacterController>().Move(-moveDir * Time.deltaTime);
-            //player2Pos.position += moveDir * Time.deltaTime;
+            //moveDir = (player2Pos.position - player1Pos.position).normalized;
+            //moveDir = transform.TransformDirection(moveDir);
+            //speed = speed + accleration;
+            //moveDir *= speed;
+            //player2.GetComponent<CharacterController>().Move(moveDir * Time.deltaTime);
+            //player1.GetComponent<CharacterController>().Move(-moveDir * Time.deltaTime);
+            ////player2Pos.position += moveDir * Time.deltaTime;
         }
 
 
