@@ -8,19 +8,21 @@ public class anotherPlayer : MonoBehaviour {
     private float gravity = 20.0f;
     private Vector3 moveDir = Vector3.zero;
     public static bool moving;
+    public static bool isAlive = true;
 
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isAlive)
+        {
 
-        if (Input.GetKey("l"))
-            transform.Rotate(0, -rotateSpeed * Time.deltaTime, 0);
-        else if (Input.GetKey("j"))
-            transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
-        else
-            transform.Rotate(0, 0 * Time.deltaTime, 0);
+            if (Input.GetKey("l"))
+                transform.Rotate(0, -rotateSpeed * Time.deltaTime, 0);
+            else if (Input.GetKey("j"))
+                transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+            else
+                transform.Rotate(0, 0 * Time.deltaTime, 0);
 
 
             if (Input.GetKey("i"))
@@ -46,9 +48,10 @@ public class anotherPlayer : MonoBehaviour {
             }
 
 
-        moveDir.y -= gravity * Time.deltaTime;
-        Vector3 newPos = transform.position + moveDir * Time.deltaTime;
-        GetComponent<Rigidbody>().MovePosition(newPos);
+            moveDir.y -= gravity * Time.deltaTime;
+            Vector3 newPos = transform.position + moveDir * Time.deltaTime;
+            GetComponent<Rigidbody>().MovePosition(newPos);
+        }
 
     }
 }

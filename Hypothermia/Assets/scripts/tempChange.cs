@@ -16,5 +16,9 @@ public class tempChange : MonoBehaviour {
             char_tempreture.temp -= stillLose;
         else
             char_tempreture.temp -= movingLose;
+
+        if(char_tempreture.temp<=0){
+            playerController.isAlive = false;
+        }
 	}
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class playerFollow : MonoBehaviour {
     public Transform PlayerTransform;
+    public Transform CameraTransform;
     private Vector3 cameraOffset;
+    private Vector3 rotationOffset;
     public bool LookAtPlayer = false;
 
 
@@ -14,6 +16,7 @@ public class playerFollow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cameraOffset = transform.position - PlayerTransform.position;
+        //rotationOffset = transform.rotation - PlayerTransform.rotation;
 
 		
 	}
@@ -21,7 +24,10 @@ public class playerFollow : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
         Vector3 newPos = PlayerTransform.position + cameraOffset;
+        //Quaternion rotation = Quaternion.Euler(transform.rotation.x, PlayerTransform.rotation.y,transform.rotation.z);
         transform.position = Vector3.Slerp(transform.position, newPos, smoothFactor);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * 10);
+    
         if (LookAtPlayer)
             transform.LookAt(PlayerTransform);
 	}

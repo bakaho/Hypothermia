@@ -23,5 +23,10 @@ public class energyChange : MonoBehaviour {
         }
         else
             char_energy.energy -= movingLose;
+
+        if (char_energy.energy <= 0)
+        {
+            playerController.isAlive = false;
+        }
     }
 }

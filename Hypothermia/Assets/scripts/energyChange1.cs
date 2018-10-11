@@ -19,5 +19,12 @@ public class energyChange1 : MonoBehaviour {
         }
         else
             char_energy1.energy -= movingLose;
+
+        if (char_energy1.energy <= 0)
+        {
+            anotherPlayer.isAlive = false;
+
+        }
+        
     }
 }

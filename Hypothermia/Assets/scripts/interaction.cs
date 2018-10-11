@@ -9,12 +9,9 @@ public class interaction : MonoBehaviour {
     public GameObject player2;
     public float tempAdd = 0.02f;
     public int timer = 0;
-    Vector3 direction1to2;
-    Vector3 direction2to1;
+    public float theForce = 50f;
 
     private Vector3 moveDir;
-    public float speed = 10f;
-    public float accleration = 1f; 
 
     private float dist;
 	// Use this for initialization
@@ -30,30 +27,24 @@ public class interaction : MonoBehaviour {
             char_tempreture.temp += tempAdd;
             char_tempreture1.temp += tempAdd;
             timer += 1;
+        }else{
+            
         }
 
         if(timer > 200 && dist<5){
             print("too long");
-            //direction1to2 = (player2Pos.position - player1Pos.position).normalized;
-            //Vector3 diff = player2Pos.position - player1Pos.position;
-            //Vector3 projected = Vector3.ProjectOnPlane(diff, Camera.main.transform.forward);
-            //origin.transform.rotation = Quaternion.LookRotation(projected);
-            player1.GetComponent<Rigidbody>().AddForce(((player1Pos.position - player2Pos.position).normalized) * 30);
-            player2.GetComponent<Rigidbody>().AddForce(((player2Pos.position - player1Pos.position).normalized) * 30);
+            player1.GetComponent<Rigidbody>().AddForce(((player1Pos.position - player2Pos.position).normalized) * theForce);
+            player2.GetComponent<Rigidbody>().AddForce(((player2Pos.position - player1Pos.position).normalized) * theForce);
             char_energy.energy -= 0.5f;
             char_energy1.energy -= 0.5f;
-
-
-
-            //moveDir = (player2Pos.position - player1Pos.position).normalized;
-            //moveDir = transform.TransformDirection(moveDir);
-            //speed = speed + accleration;
-            //moveDir *= speed;
-            //player2.GetComponent<CharacterController>().Move(moveDir * Time.deltaTime);
-            //player1.GetComponent<CharacterController>().Move(-moveDir * Time.deltaTime);
-            ////player2Pos.position += moveDir * Time.deltaTime;
         }
 
+        if (timer > 0 && dist > 30)
+        {
+            timer--;
+            print(timer);
+
+        }
 
 
 	}

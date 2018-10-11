@@ -9,14 +9,17 @@ public class playerController : MonoBehaviour {
     private float gravity = 20.0f;
     private Vector3 moveDir = Vector3.zero;
     public static bool moving;
+    public static bool isAlive = true;
 
 	// Use this for initialization
 	void Start () {
         //character_Controller = GetComponent<CharacterController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isAlive) { 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -32,6 +35,7 @@ public class playerController : MonoBehaviour {
         moveDir.y -= gravity * Time.deltaTime;
         Vector3 newPos = transform.position + moveDir * Time.deltaTime;
         GetComponent<Rigidbody>().MovePosition(newPos);
+        }
 		
 	}
 }
