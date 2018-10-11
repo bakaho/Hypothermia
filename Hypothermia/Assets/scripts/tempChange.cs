@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class tempChange : MonoBehaviour {
-    public float stillLose = 0.2f;
+    public float stillLose = 0.1f;
     public float movingLose = 0.05f;
 	// Use this for initialization
 	void Start () {

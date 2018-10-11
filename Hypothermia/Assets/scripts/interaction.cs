@@ -32,14 +32,18 @@ public class interaction : MonoBehaviour {
             timer += 1;
         }
 
-        if(timer > 100 && dist<5){
+        if(timer > 200 && dist<5){
             print("too long");
             //direction1to2 = (player2Pos.position - player1Pos.position).normalized;
             //Vector3 diff = player2Pos.position - player1Pos.position;
             //Vector3 projected = Vector3.ProjectOnPlane(diff, Camera.main.transform.forward);
             //origin.transform.rotation = Quaternion.LookRotation(projected);
-            player2.GetComponent<Rigidbody>().AddForce(((player2Pos.position - player1Pos.position).normalized) * 30);
             player1.GetComponent<Rigidbody>().AddForce(((player1Pos.position - player2Pos.position).normalized) * 30);
+            player2.GetComponent<Rigidbody>().AddForce(((player2Pos.position - player1Pos.position).normalized) * 30);
+            char_energy.energy -= 0.5f;
+            char_energy1.energy -= 0.5f;
+
+
 
             //moveDir = (player2Pos.position - player1Pos.position).normalized;
             //moveDir = transform.TransformDirection(moveDir);
