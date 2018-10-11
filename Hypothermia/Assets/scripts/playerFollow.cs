@@ -7,6 +7,7 @@ public class playerFollow : MonoBehaviour {
     private Vector3 cameraOffset;
     public bool LookAtPlayer = false;
 
+
     [Range(0.01f, 1.0f)]
     public float smoothFactor = 0.5f;
 
