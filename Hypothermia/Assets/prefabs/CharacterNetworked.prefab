@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 114131267903513272}
   - component: {fileID: 54540558772314922}
   - component: {fileID: 114302159691955646}
+  - component: {fileID: 114735068452650426}
   m_Layer: 0
   m_Name: CharacterNetworked
   m_TagString: Player
@@ -226,7 +227,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: aa7ae35fe44e147ebb5b3c4ba87efd5e, type: 2}
+  - {fileID: 2100000, guid: b8d086ca83dc14fcfab7965613f677f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -610,6 +611,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stillLose: 0.1
   movingLose: 0.05
+--- !u!114 &114735068452650426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489394672917144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!135 &135236889050391554
 SphereCollider:
   m_ObjectHideFlags: 1
