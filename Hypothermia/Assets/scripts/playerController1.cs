@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class playerController1 : NetworkBehaviour {
+public class playerController1 : MonoBehaviour {
     public float speed = 5.0f;
     public float rotateSpeed = 240.0f;
     private CharacterController character_Controller;
@@ -16,22 +15,14 @@ public class playerController1 : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
         //character_Controller = GetComponent<CharacterController>();
-        if (!isLocalPlayer)
-        {
-            return;
-        }
         joystick = GameObject.FindWithTag("joystick").GetComponent<myJoystick>();
-        //transform.position = new Vector3(0, 1.2f, 0);
+        transform.position = new Vector3(0, 1.2f, 0);
 	}
 
     // Update is called once per frame
     void Update()
     {
-        if(!isLocalPlayer){
-            return;
-        }
-
-        if (isAlive) { 
+            if (isAlive) { 
             //float h = Input.GetAxis("Horizontal");
             //float v = Input.GetAxis("Vertical");
             float h = joystick.Horizontal();
@@ -65,13 +56,5 @@ public class playerController1 : NetworkBehaviour {
             GetComponent<Rigidbody>().MovePosition(newPos);
         }
 		
-	}
-
-	public override void OnStartLocalPlayer()
-	{
-        //GetComponent<>
-        //base.OnStartLocalPlayer(){
-            
-        //}
 	}
 }
