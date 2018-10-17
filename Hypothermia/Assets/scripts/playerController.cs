@@ -23,6 +23,11 @@ public class playerController : MonoBehaviour {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+            //if(Input.touchCount>0){
+            //    Touch touch = Input.GetTouch(0);
+            //    touch.position
+            //}
+
         transform.Rotate(0, h * rotateSpeed * Time.deltaTime, 0);
 
         bool move = (v != 0) || (h != 0);

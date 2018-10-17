@@ -15,7 +15,7 @@ public class energyChange : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!playerController.moving)
+        if (!playerController1.moving)
         {
             char_energy.energy += stillAdd;
             if (char_energy.energy >= 100f)
