@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class char_tempreture : MonoBehaviour {
     Image tempBar;
-    float maxTemp = 100f;
+    float maxTemp = 500f;
     public static float temp;
 	// Use this for initialization
 	void Start () {

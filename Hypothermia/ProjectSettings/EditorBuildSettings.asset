@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/testNetwork.unity
     guid: 0a4fe1479014b48c79e2f7192622e5b7
+  - enabled: 0
+    path: Assets/Scenes/testNetworkSmall.unity
+    guid: b0d48878612674621aecab23b116083c
+  - enabled: 1
+    path: Assets/Scenes/androidSizeTest.unity
+    guid: d5e8d4da7d95f4f769e65927ebc0d0db
   m_configObjects: {}

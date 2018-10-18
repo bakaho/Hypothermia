@@ -18,8 +18,8 @@ public class energyChange : MonoBehaviour {
         if (!playerController1.moving)
         {
             char_energy.energy += stillAdd;
-            if (char_energy.energy >= 100f)
-                char_energy.energy = 100f;
+            if (char_energy.energy >= 500f)
+                char_energy.energy = 500f;
         }
         else
             char_energy.energy -= movingLose;

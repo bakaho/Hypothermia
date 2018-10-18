@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class char_energy : MonoBehaviour {
 
     Image energyBar;
-    float maxEnergy = 100f;
+    float maxEnergy = 500f;
     public static float energy;
     // Use this for initialization
     void Start()

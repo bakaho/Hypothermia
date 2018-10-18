@@ -35,7 +35,6 @@ public class playerController1 : NetworkBehaviour {
     List<int> met = new List<int>();
     public float theForce = 50f;
 
-    private Vector3 moveForceDir;
 
     private float dist;
 
@@ -95,7 +94,17 @@ public class playerController1 : NetworkBehaviour {
 
             Vector3 newCamPos = transform.position + cameraOffset;
             CameraTransform.position = Vector3.Slerp(CameraTransform.position, newCamPos, smoothFactor);
+            //CameraTransform.LookAt(PlayerTransform);
 
+            //Quaternion toRot;
+            //Quaternion curRot;
+            //if (move)
+            //{
+            //     toRot = Quaternion.LookRotation(transform.position - CameraTransform.position, transform.up);
+            //     curRot = Quaternion.Slerp(CameraTransform.rotation, toRot, 10 * Time.deltaTime);
+
+            //}
+            //CameraTransform.rotation = curRot;
 
 
 
