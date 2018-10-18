@@ -12,13 +12,15 @@ public class tempChange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //if moving,changing speed is slow if stay still, change faster
         if(!playerController.moving)
             char_tempreture.temp -= stillLose;
         else
             char_tempreture.temp -= movingLose;
 
+        //if no tempreture, die
         if(char_tempreture.temp<=0){
-            playerController.isAlive = false;
+            playerController1.isAlive = false;
         }
 	}
 }

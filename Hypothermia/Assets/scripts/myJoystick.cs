@@ -18,11 +18,13 @@ public class myJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
     public virtual void OnDrag(PointerEventData ped)
     {
         Vector2 pos;
+        //if draging in the rectangle of the joystick, calculate position
         if(RectTransformUtility.ScreenPointToLocalPointInRectangle(bgImg.rectTransform
                                                                    ,ped.position
                                                                   ,ped.pressEventCamera
                                                                    ,out pos))
         {
+            //get relative position
             pos.x = (pos.x / bgImg.rectTransform.sizeDelta.x);
             pos.y = (pos.y / bgImg.rectTransform.sizeDelta.y);
 
@@ -40,11 +42,13 @@ public class myJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData ped)
     {
+        //bounce back to zero point if move up
         inputVector = Vector3.zero;
         joystickImg.rectTransform.anchoredPosition = Vector3.zero;
 
     }
 
+    //use these data to set the horizontal and vertical value
     public float Horizontal(){
         if(inputVector.x != 0){
             print("0");

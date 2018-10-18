@@ -15,6 +15,7 @@ public class energyChange : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //stay still, energy increase, move decrease energy
         if (!playerController1.moving)
         {
             char_energy.energy += stillAdd;
@@ -24,9 +25,10 @@ public class energyChange : MonoBehaviour {
         else
             char_energy.energy -= movingLose;
 
+        //if no energy, die
         if (char_energy.energy <= 0)
         {
-            playerController.isAlive = false;
+            playerController1.isAlive = false;
         }
     }
 }

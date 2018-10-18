@@ -10,6 +10,7 @@ public class buildings : NetworkBehaviour {
 
 	public override void OnStartServer()
 	{
+        //spwan buildings ramdomly
         for (int i=0; i< buildingNum; i++){
             Vector3 spawnPos;
             if (Random.Range(0f, 10f) > 5)

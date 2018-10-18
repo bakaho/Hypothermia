@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class playerController1 : NetworkBehaviour {
+    //player basic settings for moving
     public float speed = 5.0f;
     public float rotateSpeed = 240.0f;
     private CharacterController character_Controller;
@@ -17,7 +18,7 @@ public class playerController1 : NetworkBehaviour {
 
 
 
-    //---------------
+    //camera following
     public Transform CameraTransform;
     private Vector3 cameraOffset;
     private Vector3 rotationOffset;
@@ -27,61 +28,58 @@ public class playerController1 : NetworkBehaviour {
 
 
 
-    //---------------
+    //player interaction
     public float tempAdd = 0.02f;
     //public int[] timer = new int[20];
     //public int timer = new int[20];
     List<int> timer = new List<int>();
     List<int> met = new List<int>();
     public float theForce = 50f;
-
-
     private float dist;
 
 
 
 
-
-
-	// Use this for initialization
 	void Start () {
+        //check if local
         if(!isLocalPlayer){
             showBar = false;
             return;
         }
 
-
+        //connect to joystick
         joystick = GameObject.FindWithTag("joystick").GetComponent<myJoystick>();
         showBar = true;
+
+        //initialization of camera
         CameraTransform = GameObject.FindWithTag("MainCamera").transform;
         cameraOffset = CameraTransform.transform.position - transform.position;
-        //transform.position = new Vector3(0, 1.2f, 0);
+
 	}
 
     // Update is called once per frame
     void Update()
     {
+        //check if local
         if(!isLocalPlayer){
             return;
         }  
-        if (isAlive) { 
+        if (isAlive) {
+
+            //initial info
             float h = joystick.Horizontal();
             float v = joystick.Vertical();
-
-            //if(Input.touchCount>0){
-            //    Touch touch = Input.GetTouch(0);
-            //    touch.position
-            //}
-
             transform.Rotate(0, h * rotateSpeed * Time.deltaTime, 0);
 
             bool move = (v != 0) || (h != 0);
             moving = move;
 
+            //set moving data
             moveDir = Vector3.zero;
             moveDir.x = speed * h * Time.deltaTime;
             moveDir.z = speed * v * Time.deltaTime;
 
+            //turn to face forward
             if (move)
             {
                 Vector3 movement = new Vector3(-h, 0.0f, -v);
@@ -92,10 +90,12 @@ public class playerController1 : NetworkBehaviour {
             GetComponent<Rigidbody>().MovePosition(newPos);
 
 
+            //camera following
             Vector3 newCamPos = transform.position + cameraOffset;
             CameraTransform.position = Vector3.Slerp(CameraTransform.position, newCamPos, smoothFactor);
             //CameraTransform.LookAt(PlayerTransform);
 
+            //camera rotation
             //Quaternion toRot;
             //Quaternion curRot;
             //if (move)
@@ -107,18 +107,24 @@ public class playerController1 : NetworkBehaviour {
             //CameraTransform.rotation = curRot;
 
 
-
+            //interaction
             GameObject[] players;
+            //search for all of the players
             players = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject thePlayer in players)
             {
+                //and the new comer to the list of met players
                 if (met.FindIndex(i => i == thePlayer.GetInstanceID()) == -1)
                 {
                     met.Add(thePlayer.GetInstanceID());
                     timer.Add(0);
                 }
+
+                //calculate distance between
                 dist = Vector3.Distance(transform.position, thePlayer.transform.position);
-                if (dist < 2)
+
+                //if too close, calculate time
+                if (dist < 2 && dist > 0)
                 {
 
                     timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] += 1;
@@ -126,17 +132,20 @@ public class playerController1 : NetworkBehaviour {
                     print("close");
                     char_tempreture.temp += tempAdd;
 
-
-
                 }
 
+                //if too close for some time
                 if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 200 && dist < 5 && dist > 0)
                 {
                     print("too long");
+                    //add force to bounce back
                     GetComponent<Rigidbody>().AddForce(((transform.position - thePlayer.transform.position).normalized) * theForce);
+
+                    //if try to deny the force, decrease energy
                     char_energy.energy -= 0.5f;
                 }
 
+                //if far enough, decrease 'close time'
                 if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 0 && dist > 30)
                 {
                     timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]--;
@@ -145,16 +154,15 @@ public class playerController1 : NetworkBehaviour {
                 }
             }
 
-
         }
-
 		
 	}
 
+
     public override void OnStartLocalPlayer()
     {
+        //set the local players skin to differ ot from other characters
         GetComponent<MeshRenderer>().material.color = Color.grey;
-
 
     }
 }

@@ -8,6 +8,7 @@ public class char_energy : MonoBehaviour {
     Image energyBar;
     float maxEnergy = 500f;
     public static float energy;
+
     // Use this for initialization
     void Start()
     {
@@ -19,6 +20,7 @@ public class char_energy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //show bar length
         energyBar.fillAmount = energy / maxEnergy;
 
     }
