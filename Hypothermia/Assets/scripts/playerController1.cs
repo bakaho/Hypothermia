@@ -22,9 +22,26 @@ public class playerController1 : NetworkBehaviour {
     private Vector3 cameraOffset;
     private Vector3 rotationOffset;
 
-
     [Range(0.01f, 1.0f)]
     public float smoothFactor = 0.5f;
+
+
+
+    //---------------
+    public float tempAdd = 0.02f;
+    //public int[] timer = new int[20];
+    //public int timer = new int[20];
+    List<int> timer = new List<int>();
+    List<int> met = new List<int>();
+    public float theForce = 50f;
+
+    private Vector3 moveForceDir;
+
+    private float dist;
+
+
+
+
 
 
 	// Use this for initialization
@@ -32,8 +49,9 @@ public class playerController1 : NetworkBehaviour {
         if(!isLocalPlayer){
             showBar = false;
             return;
-        }  
-        //character_Controller = GetComponent<CharacterController>();
+        }
+
+
         joystick = GameObject.FindWithTag("joystick").GetComponent<myJoystick>();
         showBar = true;
         CameraTransform = GameObject.FindWithTag("MainCamera").transform;
@@ -48,8 +66,6 @@ public class playerController1 : NetworkBehaviour {
             return;
         }  
         if (isAlive) { 
-            //float h = Input.GetAxis("Horizontal");
-            //float v = Input.GetAxis("Vertical");
             float h = joystick.Horizontal();
             float v = joystick.Vertical();
 
@@ -63,13 +79,9 @@ public class playerController1 : NetworkBehaviour {
             bool move = (v != 0) || (h != 0);
             moving = move;
 
-            //moveDir = Vector3.forward * -v;
-            //moveDir = transform.TransformDirection(moveDir);
-            //moveDir *= speed;
             moveDir = Vector3.zero;
             moveDir.x = speed * h * Time.deltaTime;
             moveDir.z = speed * v * Time.deltaTime;
-            //moveDir.y -= gravity * Time.deltaTime;
 
             if (move)
             {
@@ -81,14 +93,48 @@ public class playerController1 : NetworkBehaviour {
             GetComponent<Rigidbody>().MovePosition(newPos);
 
 
-
-
-
-
             Vector3 newCamPos = transform.position + cameraOffset;
             CameraTransform.position = Vector3.Slerp(CameraTransform.position, newCamPos, smoothFactor);
 
 
+
+
+            GameObject[] players;
+            players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject thePlayer in players)
+            {
+                if (met.FindIndex(i => i == thePlayer.GetInstanceID()) == -1)
+                {
+                    met.Add(thePlayer.GetInstanceID());
+                    timer.Add(0);
+                }
+                dist = Vector3.Distance(transform.position, thePlayer.transform.position);
+                if (dist < 2)
+                {
+
+                    timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] += 1;
+
+                    print("close");
+                    char_tempreture.temp += tempAdd;
+
+
+
+                }
+
+                if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 200 && dist < 5 && dist > 0)
+                {
+                    print("too long");
+                    GetComponent<Rigidbody>().AddForce(((transform.position - thePlayer.transform.position).normalized) * theForce);
+                    char_energy.energy -= 0.5f;
+                }
+
+                if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 0 && dist > 30)
+                {
+                    timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]--;
+                    print(timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]);
+
+                }
+            }
 
 
         }
