@@ -12,7 +12,7 @@ public class playerController1 : NetworkBehaviour {
     public static bool moving;
     public static bool isAlive = true;
     public myJoystick joystick;
-    public static bool showBar = false; 
+    public static bool showBar = true; 
     public static Transform PlayerTransform;
 
 
@@ -30,6 +30,7 @@ public class playerController1 : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
         if(!isLocalPlayer){
+            showBar = false;
             return;
         }  
         //character_Controller = GetComponent<CharacterController>();
