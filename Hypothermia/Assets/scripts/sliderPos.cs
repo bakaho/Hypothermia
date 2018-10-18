@@ -11,8 +11,11 @@ public class sliderPos : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        Vector3 sldPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        tempslider.transform.position = sldPos;
+        if (playerController1.showBar)
+        {
+            Vector3 sldPos = Camera.main.WorldToScreenPoint(this.transform.position);
+            tempslider.transform.position = sldPos;
+        }
 		
 	}
 }

@@ -12,6 +12,20 @@ public class playerController1 : NetworkBehaviour {
     public static bool moving;
     public static bool isAlive = true;
     public myJoystick joystick;
+    public static bool showBar = false; 
+    public static Transform PlayerTransform;
+
+
+
+    //---------------
+    public Transform CameraTransform;
+    private Vector3 cameraOffset;
+    private Vector3 rotationOffset;
+
+
+    [Range(0.01f, 1.0f)]
+    public float smoothFactor = 0.5f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +34,9 @@ public class playerController1 : NetworkBehaviour {
         }  
         //character_Controller = GetComponent<CharacterController>();
         joystick = GameObject.FindWithTag("joystick").GetComponent<myJoystick>();
+        showBar = true;
+        CameraTransform = GameObject.FindWithTag("MainCamera").transform;
+        cameraOffset = CameraTransform.transform.position - transform.position;
         //transform.position = new Vector3(0, 1.2f, 0);
 	}
 
@@ -61,12 +78,27 @@ public class playerController1 : NetworkBehaviour {
 
             Vector3 newPos = transform.position + moveDir;
             GetComponent<Rigidbody>().MovePosition(newPos);
+
+
+
+
+
+
+            Vector3 newCamPos = transform.position + cameraOffset;
+            CameraTransform.position = Vector3.Slerp(CameraTransform.position, newCamPos, smoothFactor);
+
+
+
+
         }
+
 		
 	}
 
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.grey;
+
+
     }
 }
