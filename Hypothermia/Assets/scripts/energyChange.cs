@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class energyChange : MonoBehaviour {
+public class energyChange : NetworkBehaviour {
     public float stillAdd = 0.01f;
     public float movingLose = 0.2f;
+    private NetworkStartPosition[] spawnPoints;
     // Use this for initialization
     void Start()
     {
+        if (isLocalPlayer)
+        {
+            spawnPoints = FindObjectsOfType<NetworkStartPosition>();
+        }
 
     }
 
@@ -28,7 +34,24 @@ public class energyChange : MonoBehaviour {
         //if no energy, die
         if (char_energy.energy <= 0)
         {
-            playerController1.isAlive = false;
+            //playerController1.isAlive = false;
+            char_energy.energy = 500f;
+            RpcRespwan();
+        }
+    }
+
+    [ClientRpc]
+    void RpcRespwan()
+    {
+        if (isLocalPlayer)
+        {
+            Vector3 spawnPoint = Vector3.zero;
+
+            if (spawnPoints != null && spawnPoints.Length > 0)
+            {
+                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+            }
+            transform.position = spawnPoint;
         }
     }
 }
