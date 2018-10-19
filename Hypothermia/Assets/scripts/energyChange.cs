@@ -8,6 +8,8 @@ public class energyChange : NetworkBehaviour {
     public float stillAdd = 0.01f;
     public float movingLose = 0.2f;
     private NetworkStartPosition[] spawnPoints;
+    public GameObject tombPrefab;
+
     // Use this for initialization
     void Start()
     {
@@ -34,8 +36,9 @@ public class energyChange : NetworkBehaviour {
         //if no energy, die
         if (char_energy.energy <= 0)
         {
-            //playerController1.isAlive = false;
+            buildTomb();
             char_energy.energy = 500f;
+            char_tempreture.temp = 500f;
             RpcRespwan();
         }
     }
@@ -53,5 +56,13 @@ public class energyChange : NetworkBehaviour {
             }
             transform.position = spawnPoint;
         }
+    }
+
+    public void buildTomb()
+    {
+        Vector3 spawnPos = transform.position;
+        Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
+        GameObject tomb = (GameObject)Instantiate(tombPrefab, spawnPos, spawnRot);
+        NetworkServer.Spawn(tomb);
     }
 }

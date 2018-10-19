@@ -7,6 +7,9 @@ public class tempChange : NetworkBehaviour {
     public float stillLose = 0.1f;
     public float movingLose = 0.05f;
     private NetworkStartPosition[] spawnPoints;
+    public GameObject tombPrefab;
+
+
 	// Use this for initialization
 	void Start () {
         if(isLocalPlayer){
@@ -25,9 +28,11 @@ public class tempChange : NetworkBehaviour {
 
         //if no tempreture, die
         if(char_tempreture.temp<=0){
-            //playerController1.isAlive = false;
+            CmdbuildTomb();
             char_tempreture.temp = 500f;
+            char_energy.energy = 500f;
             RpcRespwan();
+
         }
 	}
 
@@ -41,5 +46,14 @@ public class tempChange : NetworkBehaviour {
             }
             transform.position = spawnPoint;
         }
+    }
+
+    [Command]
+    public void CmdbuildTomb()
+    {
+        Vector3 spawnPos = transform.position;
+        Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
+        GameObject tomb = (GameObject)Instantiate(tombPrefab, spawnPos, spawnRot);
+        NetworkServer.Spawn(tomb);
     }
 }

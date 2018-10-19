@@ -528,6 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stillAdd: 0.01
   movingLose: 0.2
+  tombPrefab: {fileID: 1199710783260938, guid: c06daf247938a49d1a5f32055b5db6d9, type: 2}
 --- !u!114 &114183654514833688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -615,6 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stillLose: 0.1
   movingLose: 0.05
+  tombPrefab: {fileID: 1199710783260938, guid: c06daf247938a49d1a5f32055b5db6d9, type: 2}
 --- !u!114 &114735068452650426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -628,7 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
   m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
+  m_SyncRotationAxis: 2
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 0.001

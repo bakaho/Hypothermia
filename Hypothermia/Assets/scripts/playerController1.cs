@@ -12,10 +12,13 @@ public class playerController1 : NetworkBehaviour {
     private Vector3 moveDir = Vector3.zero;
     public static bool moving;
     public static bool isAlive = true;
+
     public myJoystick joystick;
     public static bool showBar = true; 
     public static Transform PlayerTransform;
 
+    //public GameObject tombPrefab;
+    //public static bool needTomb = false;
 
 
     //camera following
@@ -155,6 +158,9 @@ public class playerController1 : NetworkBehaviour {
             }
 
         }
+        //if(needTomb){
+        //    buildTomb();
+        //}
 		
 	}
 
@@ -165,4 +171,12 @@ public class playerController1 : NetworkBehaviour {
         GetComponent<MeshRenderer>().material.color = Color.grey;
 
     }
+
+    //public void buildTomb(){
+    //    Vector3 spawnPos = transform.position;
+    //    Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
+    //    GameObject tomb = (GameObject)Instantiate(tombPrefab, spawnPos, spawnRot);
+    //    NetworkServer.Spawn(tomb);
+    //    needTomb = false;
+    //}
 }
