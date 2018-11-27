@@ -11,19 +11,19 @@ public class buildings : NetworkBehaviour {
 	public override void OnStartServer()
 	{
         //spwan buildings ramdomly
-        for (int i=0; i< buildingNum; i++){
-            Vector3 spawnPos;
-            if (Random.Range(0f, 10f) > 5)
-            {
-                spawnPos = new Vector3(Random.Range(-20f, -3f), -0.7f, Random.Range(-20f, 20f));
-            }else{
-                spawnPos = new Vector3(Random.Range(20f, 3f), -0.7f, Random.Range(-20f, 20f));
-            }
-            Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
+        //for (int i=0; i< buildingNum; i++){
+        //    Vector3 spawnPos;
+        //    if (Random.Range(0f, 10f) > 5)
+        //    {
+        //        spawnPos = new Vector3(Random.Range(-20f, -3f), -0.7f, Random.Range(-20f, 20f));
+        //    }else{
+        //        spawnPos = new Vector3(Random.Range(20f, 3f), -0.7f, Random.Range(-20f, 20f));
+        //    }
+        //    Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
 
-            GameObject building = (GameObject)Instantiate(buildingPrefab, spawnPos, spawnRot);
-            NetworkServer.Spawn(building);
-        }
+        //    GameObject building = (GameObject)Instantiate(buildingPrefab, spawnPos, spawnRot);
+        //    NetworkServer.Spawn(building);
+        //}
         //base.OnStartServer();{
             
         //}
