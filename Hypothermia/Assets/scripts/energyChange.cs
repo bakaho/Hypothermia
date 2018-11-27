@@ -36,7 +36,7 @@ public class energyChange : NetworkBehaviour {
         //if no energy, die
         if (char_energy.energy <= 0)
         {
-            buildTomb();
+            CmdbuildTomb();
             char_energy.energy = 500f;
             char_tempreture.temp = 500f;
             RpcRespwan();
@@ -58,7 +58,8 @@ public class energyChange : NetworkBehaviour {
         }
     }
 
-    public void buildTomb()
+    [Command]
+    public void CmdbuildTomb()
     {
         Vector3 spawnPos = transform.position;
         Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
