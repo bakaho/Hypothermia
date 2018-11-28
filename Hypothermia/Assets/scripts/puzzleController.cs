@@ -17,9 +17,9 @@ public class puzzleController : MonoBehaviour {
     public float startXpos = -6.75f; //15x
     public float cubeSize = 1.5f;
     public Vector3 centerPoint = new Vector3(5.25f, -1.2f, 0f);
-    public float boundStartXposL = -14.25f; //18x -8.25f
+    public float boundStartXposL = -8.25f; //18x -8.25f
     public float boundStartZposL = -14.25f; //15x
-    public float boundStartXposH = 14.25f; //18x 18.75f
+    public float boundStartXposH = 18.75f; //18x 18.75f
     public float boundStartZposH = 14.25f; //15x
     public int shuffleLB = 2;
     public int shuffleHB = 5;
@@ -172,26 +172,5 @@ public class puzzleController : MonoBehaviour {
         
     }
 
-    void groupCubes(){
-        for (int j = 0; j < 20; j++)
-        {
-            for (int i = 0; i < stdPuzs.Length; i++)
-            {
-                if (stdPuzs[i].transform.position.x == startXpos + j * cubeSize)
-                {
-                    sameX[j].Add(stdPuzs[i]);
-                }
-            }
-        }
-        for (int j = 0; j < 20; j++)
-        {
-            for (int i = 0; i < stdPuzs.Length; i++)
-            {
-                if (stdPuzs[i].transform.position.z == startZpos + j * cubeSize)
-                {
-                    sameZ[j].Add(stdPuzs[i]);
-                }
-            }
-        }
-    }
-}
+    void groupCubes()
+    {         for (int j = 0; j < 20; j++)         {             for (int i = 0; i < stdPuzs.Length; i++)             {                 if (Mathf.Abs(stdPuzs[i].transform.position.x - (boundStartXposL + j * cubeSize)) < 0.1f)                 {                     sameX[j].Add(stdPuzs[i]);                 }             }         }         for (int j = 0; j < 20; j++)         {             for (int i = 0; i < stdPuzs.Length; i++)             {                 if (Mathf.Abs(stdPuzs[i].transform.position.z - (boundStartZposL + j * cubeSize)) < 0.1f)                  {                     sameZ[j].Add(stdPuzs[i]);                 }             }         }     } }
