@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class puzzleController : MonoBehaviour {
 
@@ -11,21 +12,32 @@ public class puzzleController : MonoBehaviour {
     public float startXpos = -6.75f; //15x
     public float cubeSize = 1.5f;
     public Vector3 centerPoint = new Vector3(5.25f, -1.2f, 0f);
-    //public float boundStartZpos = -12.75f; //18x
-    //public float boundStartYpos = -1.2f; //5x
-    //public float boundStartXpos = -6.75f; //15x
+    public float boundStartZposL = -8.25f; //18x
+    public float boundStartXposL = -14.25f; //15x
+    public float boundStartZposH = 18.75f; //18x
+    public float boundStartXposH = 14.25f; //15x
+
     List<GameObject>[] sameX = new List<GameObject>[20];
-    List<GameObject>[] sameY = new List<GameObject>[20];
     List<GameObject>[] sameZ = new List<GameObject>[20];
+
+    System.Random rnd = new System.Random();
 
 
     // Use this for initialization
     void Start()
     {
+        for(int i = 0; i < 20; i++){
+            sameX[i] = new List<GameObject>();
+            sameZ[i] = new List<GameObject>();
+        }
         stdPuzs = GameObject.FindGameObjectsWithTag("stadiumPuz");
         for (int i = 0; i < stdPuzs.Length; i++){
             originalPos[i] = new Vector3(stdPuzs[i].transform.position.x,stdPuzs[i].transform.position.y,stdPuzs[i].transform.position.z);
-            print(originalPos[i].x +" " +originalPos[i].y+" "+originalPos[i].z);
+            //print(originalPos[i].x +" " +originalPos[i].y+" "+originalPos[i].z);
+        }
+        for (int i = 0; i < 8;i++){
+            shuffle();
+            print("shuffle");
         }
 	}
 	
@@ -35,6 +47,123 @@ public class puzzleController : MonoBehaviour {
 	}
 
     void shuffle(){
+        groupCubes();
+        int rnd4axis = rnd.Next(0, 19);
+        int theAxis = 0;
+        int line = 0;
+
+        if(rnd4axis<10){
+            theAxis = 0;
+            do
+            {
+                line = rnd.Next(0, 19);
+            } while (sameZ[line].Count == 0);
+        }else{
+            theAxis = 1;
+            do
+            {
+                line = rnd.Next(0, 19);
+            } while (sameX[line].Count == 0);
+        }
+        int theStep = rnd.Next(3, 8);
+
+
+        int preDir = rnd.Next(0, 19);
+        int theDir = 0;
+
+        if (preDir < 10)
+        {
+            theDir = 0;
+        }
+        else
+        {
+            theDir = 1;
+        }
+
+        for (int i = 0; i < theStep; i++){
+            step(theAxis, theDir, line);
+        }
+
+
+        
+    }
+
+    void step(int axis, int dir, int index){
+        //detect colli
+        //detect bound
+
+        bool canMove = true;
+        if (axis == 0)
+        {//sameZ moveX
+            for (int i = 0; i < sameZ[index].Count; i++)
+            {
+                print("steps1");
+                Vector3 testPos = new Vector3((float)(sameZ[index][i].transform.position.x + dir * 1.5), sameZ[index][i].transform.position.y, sameZ[index][i].transform.position.z);
+                if (testPos.x > boundStartXposH || testPos.x > boundStartXposL)
+                {
+                    canMove = false;
+                    break;
+                }
+            }
+            if (canMove){
+                for (int i = 0; i < sameZ[index].Count; i++)
+                {
+                    print("move_1");
+                    sameZ[index][i].transform.position += new Vector3(dir * 1.5f, 0,0);
+                }
+                
+            }
+        }
+        else
+        {//sameX moveZ
+                for (int i = 0; i < sameX[index].Count; i++)
+                {
+                print("steps2");
+                Vector3 testPos = new Vector3(sameX[index][i].transform.position.x, sameX[index][i].transform.position.y, (float)(sameX[index][i].transform.position.z+ dir * 1.5));
+                    if (testPos.z > boundStartZposH || testPos.z > boundStartZposL)
+                    {
+                        canMove = false;
+                        break;
+                    }
+                } 
+            if (canMove)
+            {
+                for (int i = 0; i < sameX[index].Count; i++)
+                {
+                    print("move_1");
+                    sameX[index][i].transform.position += new Vector3(0, 0, dir * 1.5f);
+                }
+
+            }
+        }
+
+        
+    }
+
+    void groupCubes(){
+        for (int j = 0; j < 20; j++)
+        {
+            for (int i = 0; i < stdPuzs.Length; i++)
+            {
+                if (stdPuzs[i].transform.position.x == startXpos + j * cubeSize)
+                {
+                    sameX[j].Add(stdPuzs[i]);
+                }
+            }
+        }
+        for (int j = 0; j < 20; j++)
+        {
+            for (int i = 0; i < stdPuzs.Length; i++)
+            {
+                if (stdPuzs[i].transform.position.z == startZpos + j * cubeSize)
+                {
+                    sameZ[j].Add(stdPuzs[i]);
+                }
+            }
+        }
+    }
+
+    void checkCollision(){
         
     }
 }
