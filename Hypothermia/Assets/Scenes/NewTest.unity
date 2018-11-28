@@ -9411,6 +9411,13 @@ MonoBehaviour:
   startXpos: -12.75
   cubeSize: 1.5
   centerPoint: {x: 5.25, y: -1.2, z: 0}
+  boundStartZposL: -8.25
+  boundStartXposL: -14.25
+  boundStartZposH: 18.75
+  boundStartXposH: 14.25
+  shuffleLB: 1
+  shuffleHB: 5
+  shuffleTime: 16
 --- !u!4 &2064579762
 Transform:
   m_ObjectHideFlags: 0

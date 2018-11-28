@@ -16,6 +16,9 @@ public class puzzleController : MonoBehaviour {
     public float boundStartXposL = -14.25f; //15x
     public float boundStartZposH = 18.75f; //18x
     public float boundStartXposH = 14.25f; //15x
+    public int shuffleLB = 2;
+    public int shuffleHB = 5;
+    public int shuffleTime = 15;
 
     List<GameObject>[] sameX = new List<GameObject>[20];
     List<GameObject>[] sameZ = new List<GameObject>[20];
@@ -35,7 +38,7 @@ public class puzzleController : MonoBehaviour {
             originalPos[i] = new Vector3(stdPuzs[i].transform.position.x,stdPuzs[i].transform.position.y,stdPuzs[i].transform.position.z);
             //print(originalPos[i].x +" " +originalPos[i].y+" "+originalPos[i].z);
         }
-        for (int i = 0; i < 20;i++){
+        for (int i = 0; i < shuffleTime;i++){
             shuffle();
             print("shuffle");
         }
@@ -65,7 +68,7 @@ public class puzzleController : MonoBehaviour {
                 line = rnd.Next(0, 19);
             } while (sameX[line].Count == 0);
         }
-        int theStep = rnd.Next(3, 6);
+        int theStep = rnd.Next(shuffleLB, shuffleHB);
 
 
         int preDir = rnd.Next(0, 19);
@@ -98,10 +101,10 @@ public class puzzleController : MonoBehaviour {
             for (int i = 0; i < sameZ[index].Count; i++)
             {
                 print("steps1");
-                Vector3 testPos = new Vector3((float)(sameZ[index][i].transform.position.x + dir * 1.5), sameZ[index][i].transform.position.y, sameZ[index][i].transform.position.z);
-                if (testPos.x > boundStartXposH || testPos.x < boundStartXposL)
+                Vector3 testPos = new Vector3((float)(sameZ[index][i].transform.position.x + dir * 1.5f), sameZ[index][i].transform.position.y, sameZ[index][i].transform.position.z);
+                if (testPos.x >= boundStartXposH || testPos.x <= boundStartXposL)
                 {
-                    
+                    print("steps111111111");
                     canMove = false;
                     break;
                 }
@@ -109,31 +112,31 @@ public class puzzleController : MonoBehaviour {
             if (canMove){
                 for (int i = 0; i < sameZ[index].Count; i++)
                 {
-                    print("steps111111111");
-                    sameZ[index][i].transform.position += new Vector3(dir * 1.5f, 0,0);
+                    
+                    sameZ[index][i].transform.position = new Vector3((float)(sameZ[index][i].transform.position.x + dir * 1.5f), sameZ[index][i].transform.position.y, sameZ[index][i].transform.position.z);
                 }
                 
             }
         }
         else
         {//sameX moveZ
-                for (int i = 0; i < sameX[index].Count; i++)
+            for (int i = 0; i < sameX[index].Count; i++)
+            {
+             print("steps2");
+             Vector3 testPos = new Vector3(sameX[index][i].transform.position.x, sameX[index][i].transform.position.y, (float)(sameX[index][i].transform.position.z+ dir * 1.5f));
+                if (testPos.z >= boundStartZposH || testPos.z <= boundStartZposL)
                 {
-                print("steps2");
-                Vector3 testPos = new Vector3(sameX[index][i].transform.position.x, sameX[index][i].transform.position.y, (float)(sameX[index][i].transform.position.z+ dir * 1.5));
-                    if (testPos.z > boundStartZposH || testPos.z < boundStartZposL)
-                    {
-                        
-                        canMove = false;
-                        break;
-                    }
-                } 
+                    print("steps222222222");    
+                    canMove = false;
+                    break;
+                }
+            } 
             if (canMove)
             {
                 for (int i = 0; i < sameX[index].Count; i++)
                 {
-                    print("steps222222222");    
-                    sameX[index][i].transform.position += new Vector3(0, 0, dir * 1.5f);
+                    
+                    sameX[index][i].transform.position = new Vector3(sameX[index][i].transform.position.x, sameX[index][i].transform.position.y, (float)(sameX[index][i].transform.position.z + dir * 1.5f));
                 }
 
             }
