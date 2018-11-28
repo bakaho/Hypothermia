@@ -720,6 +720,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 24c08b4052ced48c3a5012825fc23633, type: 3}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c08b4052ced48c3a5012825fc23633, type: 3}
   m_IsPrefabAsset: 0
@@ -1733,6 +1737,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 24c08b4052ced48c3a5012825fc23633, type: 3}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c08b4052ced48c3a5012825fc23633, type: 3}
   m_IsPrefabAsset: 0
@@ -2471,6 +2479,614 @@ Prefab:
     - target: {fileID: 4907175923002328, guid: 592b33257e27644bc96754b482bca185, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1619777509931448, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadium
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482889044613854, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515919738296240, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046385471706300, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289143396119212, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428836479082136, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614437776578310, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472956582485354, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971740675561308, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804403556579282, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531540951665208, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861107515932288, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463303296082856, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867355522781878, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246985835745986, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696893995631502, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110885122698576, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027360772293492, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384483758433942, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222284664546908, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106860931654174, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114344042985024, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698270208581658, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055702699255892, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567219774830284, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662225864030698, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628073918025826, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695001691261592, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475206925691796, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268064735900640, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674817018146596, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100107811870986, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209611091343766, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543355520303674, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926585465764014, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733551590914010, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834966143125114, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232662569895912, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656122617690848, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984915724286944, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143537134044402, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464265622749618, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405974742802738, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165023278032178, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485380791158776, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913572331895378, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253746822093404, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797450950340018, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274113387496260, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308453535411762, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762886304605218, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289134016707786, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308593819132956, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710291074682240, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591421621062574, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980192721819900, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307404607969040, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070764169035770, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928290843596048, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969453369780880, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332418155803474, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469142158700762, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708428200916824, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431370615379448, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598700839877256, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179587471894602, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043252572827518, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708803757282608, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569104575532534, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788999514661288, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089625391742, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190451946663332, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317798678328572, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609085561073692, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158142625497026, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065038855322944, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113788897582504, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866863355550268, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360472444288096, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941287447655692, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1619516747686998, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993079169794988, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600032098988430, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647900245539750, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025487018048942, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549763391287996, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725068405654934, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000021238950836, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783749465691284, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313578938567980, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700098514939450, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103977164725872, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219874276610994, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101207166394776, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248711711219254, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739543090705806, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056468913725830, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712074538616788, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703085983335268, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720854230034964, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205369108735824, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492577069366764, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326432707397884, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053781785020952, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246106361260042, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394552747352174, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110648823171958, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226729355968996, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022499360238404, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315018611888968, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506387988798800, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486666373439638, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439836664423390, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483900594777142, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662500256860812, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446629250877646, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381812436398440, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016067842776684, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389966746033506, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342163287830854, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152050203413374, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789015343890378, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983240984569062, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791129065897354, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620993712698082, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682149138926798, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493333640048518, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712774986990446, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938696025992154, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309389520202076, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225864399258788, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880772572695826, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354029562555228, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885172237133862, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797345292506012, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826133002845386, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231399973202440, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526445167420894, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136575963876098, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852465715940778, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894215080659470, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837748393684758, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068544821765884, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422547276601050, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656590992971380, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545970079827674, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656163163587408, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037005838298202, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713551429853514, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020870350768854, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776339780650356, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985257680599386, guid: 592b33257e27644bc96754b482bca185, type: 2}
+      propertyPath: m_TagString
+      value: stadiumPuz
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54759067624333260, guid: 592b33257e27644bc96754b482bca185, type: 2}
@@ -3351,7 +3967,7 @@ GameObject:
   - component: {fileID: 1708093578}
   - component: {fileID: 1708093579}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8140,7 +8756,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

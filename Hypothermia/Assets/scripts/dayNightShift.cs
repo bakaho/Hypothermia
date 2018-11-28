@@ -21,12 +21,12 @@ public class dayNightShift : MonoBehaviour {
         }
         if(isNight){
             if(GetComponent<Light>().intensity > 0){
-                GetComponent<Light>().intensity -= 0.2f;
+                GetComponent<Light>().intensity -= 0.05f;
             }
         }else{
             if (GetComponent<Light>().intensity < 1f)
             {
-                GetComponent<Light>().intensity += 0.2f;
+                GetComponent<Light>().intensity += 0.05f;
             }
         }
 	}

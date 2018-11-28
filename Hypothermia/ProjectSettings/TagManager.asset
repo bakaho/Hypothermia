@@ -8,6 +8,8 @@ TagManager:
   - sliderEner
   - joystick
   - buttonPuz
+  - stadium
+  - stadiumPuz
   layers:
   - Default
   - TransparentFX
