@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4929548808443566}
   - component: {fileID: 65271754300091954}
-  - component: {fileID: 114459080476558148}
-  - component: {fileID: 114706524752411054}
   m_Layer: 0
   m_Name: btnC
   m_TagString: buttonPuz
@@ -127,56 +125,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 2, z: 3}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &114459080476558148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267079626115418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 74
-    i1: 220
-    i2: 168
-    i3: 159
-    i4: 77
-    i5: 179
-    i6: 20
-    i7: 63
-    i8: 250
-    i9: 138
-    i10: 109
-    i11: 7
-    i12: 152
-    i13: 49
-    i14: 109
-    i15: 161
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
---- !u!114 &114706524752411054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267079626115418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1

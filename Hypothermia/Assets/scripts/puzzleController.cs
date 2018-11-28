@@ -17,9 +17,9 @@ public class puzzleController : MonoBehaviour {
     public float startXpos = -6.75f; //15x
     public float cubeSize = 1.5f;
     public Vector3 centerPoint = new Vector3(5.25f, -1.2f, 0f);
-    public float boundStartXposL = -14.25f; //18x
+    public float boundStartXposL = -8.25f; //18x
     public float boundStartZposL = -14.25f; //15x
-    public float boundStartXposH = 14.75f; //18x
+    public float boundStartXposH = 18.75f; //18x
     public float boundStartZposH = 14.25f; //15x
     public int shuffleLB = 2;
     public int shuffleHB = 5;
@@ -70,7 +70,7 @@ public class puzzleController : MonoBehaviour {
 
     void shuffle(){
         groupCubes();
-        int rnd4axis = rnd.Next(0, 20);
+        int rnd4axis = rnd.Next(0, 19);
         int theAxis = 0;
         int line = 0;
 
