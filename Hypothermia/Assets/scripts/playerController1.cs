@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class playerController1 : NetworkBehaviour {
     //player basic settings for moving
-    public float speed = 5.0f;
+    public float speed = 2.0f;
     public float rotateSpeed = 240.0f;
     private CharacterController character_Controller;
     private float gravity = 20.0f;
@@ -40,6 +40,8 @@ public class playerController1 : NetworkBehaviour {
     public float theForce = 50f;
     private float dist;
 
+    static Animator anim;
+
 
 
 
@@ -57,6 +59,10 @@ public class playerController1 : NetworkBehaviour {
         //initialization of camera
         CameraTransform = GameObject.FindWithTag("MainCamera").transform;
         cameraOffset = CameraTransform.transform.position - new Vector3(0f, 0f, 0f);
+
+        anim = GetComponent<Animator>();
+
+
         //transform.position
 
 	}
@@ -88,7 +94,12 @@ public class playerController1 : NetworkBehaviour {
             {
                 Vector3 movement = new Vector3(-h, 0.0f, -v);
                 transform.rotation = Quaternion.LookRotation(-movement);
+                anim.SetBool("isWalking", true);
+            }else{
+                anim.SetBool("isWalking", false);
             }
+
+
 
             Vector3 newPos = transform.position + moveDir;
             GetComponent<Rigidbody>().MovePosition(newPos);
