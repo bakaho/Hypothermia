@@ -35,7 +35,7 @@ public class puzzleController : MonoBehaviour {
             originalPos[i] = new Vector3(stdPuzs[i].transform.position.x,stdPuzs[i].transform.position.y,stdPuzs[i].transform.position.z);
             //print(originalPos[i].x +" " +originalPos[i].y+" "+originalPos[i].z);
         }
-        for (int i = 0; i < 8;i++){
+        for (int i = 0; i < 20;i++){
             shuffle();
             print("shuffle");
         }
@@ -65,7 +65,7 @@ public class puzzleController : MonoBehaviour {
                 line = rnd.Next(0, 19);
             } while (sameX[line].Count == 0);
         }
-        int theStep = rnd.Next(3, 8);
+        int theStep = rnd.Next(3, 6);
 
 
         int preDir = rnd.Next(0, 19);
@@ -73,7 +73,7 @@ public class puzzleController : MonoBehaviour {
 
         if (preDir < 10)
         {
-            theDir = 0;
+            theDir = -1;
         }
         else
         {
@@ -99,8 +99,9 @@ public class puzzleController : MonoBehaviour {
             {
                 print("steps1");
                 Vector3 testPos = new Vector3((float)(sameZ[index][i].transform.position.x + dir * 1.5), sameZ[index][i].transform.position.y, sameZ[index][i].transform.position.z);
-                if (testPos.x > boundStartXposH || testPos.x > boundStartXposL)
+                if (testPos.x > boundStartXposH || testPos.x < boundStartXposL)
                 {
+                    
                     canMove = false;
                     break;
                 }
@@ -108,7 +109,7 @@ public class puzzleController : MonoBehaviour {
             if (canMove){
                 for (int i = 0; i < sameZ[index].Count; i++)
                 {
-                    print("move_1");
+                    print("steps111111111");
                     sameZ[index][i].transform.position += new Vector3(dir * 1.5f, 0,0);
                 }
                 
@@ -120,8 +121,9 @@ public class puzzleController : MonoBehaviour {
                 {
                 print("steps2");
                 Vector3 testPos = new Vector3(sameX[index][i].transform.position.x, sameX[index][i].transform.position.y, (float)(sameX[index][i].transform.position.z+ dir * 1.5));
-                    if (testPos.z > boundStartZposH || testPos.z > boundStartZposL)
+                    if (testPos.z > boundStartZposH || testPos.z < boundStartZposL)
                     {
+                        
                         canMove = false;
                         break;
                     }
@@ -130,7 +132,7 @@ public class puzzleController : MonoBehaviour {
             {
                 for (int i = 0; i < sameX[index].Count; i++)
                 {
-                    print("move_1");
+                    print("steps222222222");    
                     sameX[index][i].transform.position += new Vector3(0, 0, dir * 1.5f);
                 }
 
