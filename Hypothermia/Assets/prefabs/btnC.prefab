@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4929548808443566}
   - component: {fileID: 65271754300091954}
+  - component: {fileID: 114455399415062286}
   m_Layer: 0
   m_Name: btnC
   m_TagString: buttonPuz
@@ -125,3 +126,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 2, z: 3}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &114455399415062286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267079626115418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d43d832df1fd448baf4684567c44b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

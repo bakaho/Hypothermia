@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class btnControl : MonoBehaviour {
+    
     Collider cld;
     GameObject[] stdPuzs;
 
@@ -13,16 +14,56 @@ public class btnControl : MonoBehaviour {
         stdPuzs = GameObject.FindGameObjectsWithTag("stadiumPuz");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        if(cld.isTrigger == true){
-            foreach (GameObject sp in stdPuzs){
-                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f) {
-                    sp.transform.localScale = new Vector3(0.15F, 0.15F, 0.15F);
+
+    //check trigger
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            foreach (GameObject sp in stdPuzs)
+            {
+                //print("!!!!!!!");
+                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                {
+                    print("!!!!!!!");
+                    sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
                 }
             }
-                
+            Debug.Log("player");
         }
-		
-	}
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            foreach (GameObject sp in stdPuzs)
+            {
+                //print("!!!!!!!");
+                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                {
+                    print("!!!!!!!");
+                    sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                }
+            }
+            Debug.Log("player");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            foreach (GameObject sp in stdPuzs)
+            {
+                //print("!!!!!!!");
+                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                {
+                    print("!!!!!!!");
+                    sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
+                }
+            }
+            Debug.Log("player");
+        }
+    }
 }
