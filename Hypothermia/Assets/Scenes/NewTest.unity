@@ -1146,72 +1146,6 @@ Transform:
   m_Father: {fileID: 1157473702}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &499426052
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1974034980}
-    m_Modifications:
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.29999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.29999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.29999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_TagString
-      value: buttonPuz
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_Name
-      value: button (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7eea6b7a89254443a1785970234635a, type: 3}
-  m_IsPrefabAsset: 0
 --- !u!1 &563554590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 0e205cc2e32354a3eaf9dedcef3871e9,
@@ -1300,6 +1234,10 @@ Prefab:
     - target: {fileID: 4110486354067276, guid: a04fb8a6d8dcf4e779ea5a79043346cf, type: 2}
       propertyPath: m_RootOrder
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808168131794066, guid: a04fb8a6d8dcf4e779ea5a79043346cf, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04fb8a6d8dcf4e779ea5a79043346cf, type: 2}
@@ -2338,23 +2276,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66533d28bec14ec796d9ff29eb53128, type: 3}
   m_IsPrefabAsset: 0
---- !u!1 &1221452066 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: f7eea6b7a89254443a1785970234635a,
-    type: 3}
-  m_PrefabInternal: {fileID: 499426052}
---- !u!65 &1221452068
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1221452066}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 2, z: 3}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1261058444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1308453535411762, guid: 592b33257e27644bc96754b482bca185, type: 2}
       propertyPath: m_TagString
-      value: stadiumPuz
+      value: Pos
       objectReference: {fileID: 0}
     - target: {fileID: 1762886304605218, guid: 592b33257e27644bc96754b482bca185, type: 2}
       propertyPath: m_TagString
@@ -3057,7 +2978,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1826133002845386, guid: 592b33257e27644bc96754b482bca185, type: 2}
       propertyPath: m_TagString
-      value: stadiumPuz
+      value: Pos
       objectReference: {fileID: 0}
     - target: {fileID: 1231399973202440, guid: 592b33257e27644bc96754b482bca185, type: 2}
       propertyPath: m_TagString
@@ -9047,7 +8968,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4929548808443566, guid: 4adca89f4db3143ffa8a6d0798316da1, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267079626115418, guid: 4adca89f4db3143ffa8a6d0798316da1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4adca89f4db3143ffa8a6d0798316da1, type: 2}
@@ -9406,18 +9331,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f603b64d6024b4784ac71163658d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonX: {fileID: 1808168131794066, guid: a04fb8a6d8dcf4e779ea5a79043346cf, type: 2}
+  buttonZ: {fileID: 1267079626115418, guid: 4adca89f4db3143ffa8a6d0798316da1, type: 2}
+  theTag: stadiumPuz
   startZpos: -12.75
   startYpos: -6.75
   startXpos: -12.75
   cubeSize: 1.5
   centerPoint: {x: 5.25, y: -1.2, z: 0}
-  boundStartZposL: -8.25
   boundStartXposL: -14.25
-  boundStartZposH: 18.75
+  boundStartZposL: -8.25
   boundStartXposH: 14.25
+  boundStartZposH: 18.75
   shuffleLB: 1
-  shuffleHB: 5
-  shuffleTime: 16
+  shuffleHB: 3
+  shuffleTime: 8
 --- !u!4 &2064579762
 Transform:
   m_ObjectHideFlags: 0

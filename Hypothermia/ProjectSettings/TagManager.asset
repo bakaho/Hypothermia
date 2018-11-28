@@ -10,6 +10,7 @@ TagManager:
   - buttonPuz
   - stadium
   - stadiumPuz
+  - Pos
   layers:
   - Default
   - TransparentFX
