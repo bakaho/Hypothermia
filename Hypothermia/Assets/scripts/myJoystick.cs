@@ -55,7 +55,7 @@ public class myJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
             return inputVector.x;
 
         }else{
-            print("1");
+            //print("1");
             return Input.GetAxis("Horizontal");
 
         }
@@ -64,13 +64,13 @@ public class myJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
     public float Vertical(){
         if (inputVector.z != 0)
         {
-            print("2");
+            //print("2");
             return inputVector.z;
 
         }
         else
         {
-            print("3");
+            //print("3");
             return Input.GetAxis("Vertical");
            
         }

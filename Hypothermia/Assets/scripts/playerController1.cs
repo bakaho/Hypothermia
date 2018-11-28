@@ -56,7 +56,8 @@ public class playerController1 : NetworkBehaviour {
 
         //initialization of camera
         CameraTransform = GameObject.FindWithTag("MainCamera").transform;
-        cameraOffset = CameraTransform.transform.position - transform.position;
+        cameraOffset = CameraTransform.transform.position - new Vector3(0f, 0f, 0f);
+        //transform.position
 
 	}
 
@@ -171,6 +172,35 @@ public class playerController1 : NetworkBehaviour {
         GetComponent<MeshRenderer>().material.color = Color.grey;
 
     }
+
+    //check trigger
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("buttonPuz"))
+        {
+            other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, 0.3f, 0);
+            Debug.Log("but");
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("buttonPuz"))
+        {
+            other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, other.gameObject.transform.position.y+1.8f, 0);
+            Debug.Log("but");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("buttonPuz"))
+        {
+            other.gameObject.transform.position = other.gameObject.transform.position + new Vector3(0, 0.3f, 0);
+        }
+    }
+
+
 
     //public void buildTomb(){
     //    Vector3 spawnPos = transform.position;

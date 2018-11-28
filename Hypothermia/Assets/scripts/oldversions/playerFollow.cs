@@ -17,7 +17,9 @@ public class playerFollow : MonoBehaviour {
 	void Start () {
         
 
-        cameraOffset = transform.position - PlayerTransform.position;
+        cameraOffset = transform.position - new Vector3(0f,0f,0f);
+        //PlayerTransform.position
+        print(cameraOffset);
         PlayerTransform = GameObject.FindWithTag("Player").transform;
         //PlayerTransform = GameObject.FindWithTag("Player").transform;
         //rotationOffset = transform.rotation - PlayerTransform.rotation;
