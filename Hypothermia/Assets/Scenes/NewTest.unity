@@ -8192,6 +8192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9f2f0a0843f4ec8838d227e32e4a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNight: 0
 --- !u!114 &1873621028
 MonoBehaviour:
   m_ObjectHideFlags: 0
