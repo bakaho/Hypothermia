@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class btnControl : MonoBehaviour {
-    
+    public enum thisMode{
+        Row,
+        Column
+    }
+    public thisMode myMode;
     Collider cld;
     GameObject[] stdPuzs;
 
@@ -23,10 +27,17 @@ public class btnControl : MonoBehaviour {
             foreach (GameObject sp in stdPuzs)
             {
                 //print("!!!!!!!");
-                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                if (myMode == thisMode.Row)
                 {
-                    print("!!!!!!!");
-                    sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                    if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                    {
+                        sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                    }
+                }else{
+                    if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
+                    {
+                        sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                    }
                 }
             }
             Debug.Log("player");
@@ -40,10 +51,19 @@ public class btnControl : MonoBehaviour {
             foreach (GameObject sp in stdPuzs)
             {
                 //print("!!!!!!!");
-                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                if (myMode == thisMode.Row)
                 {
-                    print("!!!!!!!");
-                    sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                    if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                    {
+                        sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                    }
+                }
+                else
+                {
+                    if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
+                    {
+                        sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                    }
                 }
             }
             Debug.Log("player");
@@ -56,11 +76,19 @@ public class btnControl : MonoBehaviour {
         {
             foreach (GameObject sp in stdPuzs)
             {
-                //print("!!!!!!!");
-                if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                if (myMode == thisMode.Row)
                 {
-                    print("!!!!!!!");
-                    sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
+                    if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                    {
+                        sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
+                    }
+                }
+                else
+                {
+                    if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
+                    {
+                        sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
+                    }
                 }
             }
             Debug.Log("player");
