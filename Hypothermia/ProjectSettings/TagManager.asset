@@ -13,6 +13,7 @@ TagManager:
   - Pos
   - pGrass
   - pWall
+  - hint1
   layers:
   - Default
   - TransparentFX

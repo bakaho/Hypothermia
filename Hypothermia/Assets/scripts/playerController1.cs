@@ -213,6 +213,12 @@ public class playerController1 : NetworkBehaviour {
             other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, other.gameObject.transform.position.y + 1.8f, 0);
 
         }
+        if (other.gameObject.CompareTag("hint1"))
+        {
+            other.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+
+        }
+
     }
 
     void OnTriggerStay(Collider other)
@@ -222,6 +228,11 @@ public class playerController1 : NetworkBehaviour {
             other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, other.gameObject.transform.position.y+1.8f, 0);
 
         }
+        if (other.gameObject.CompareTag("hint1"))
+        {
+            other.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -229,6 +240,11 @@ public class playerController1 : NetworkBehaviour {
         if (other.gameObject.CompareTag("buttonPuz"))
         {
             other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, other.gameObject.transform.position.y + 1.5f, 0);
+        }
+        if (other.gameObject.CompareTag("hint1"))
+        {
+            other.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+
         }
     }
 
