@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class pickUpHint : MonoBehaviour {
-    public Collider coll;
+    private Collider coll;
 	private void Start()
 	{
         coll = GetComponent<BoxCollider>();
