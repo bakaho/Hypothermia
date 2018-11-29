@@ -50,7 +50,7 @@ public class btnControl : MonoBehaviour
                     if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
                     {
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
-
+                        sp.GetComponent<thisDrag>().canDragX = true;
                         //RaycastHit hit = new RaycastHit();
                     }
 
@@ -61,6 +61,7 @@ public class btnControl : MonoBehaviour
                     if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
                     {
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                        sp.GetComponent<thisDrag>().canDragZ = true;
                     }
                 }
             }
@@ -81,7 +82,7 @@ public class btnControl : MonoBehaviour
                     {
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
                         sp.GetComponent<thisDrag>().canDragX = true;
-                        sp.GetComponent<thisDrag>().isLinked = true;
+                        //sp.GetComponent<thisDrag>().isLinkedX = true;
 
                         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         //RaycastHit hit = new RaycastHit();
@@ -102,6 +103,7 @@ public class btnControl : MonoBehaviour
                     if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
                     {
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                        sp.GetComponent<thisDrag>().canDragZ = true;
                     }
                 }
             }
@@ -119,6 +121,7 @@ public class btnControl : MonoBehaviour
                     if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
                     {
                         sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
+                        sp.GetComponent<thisDrag>().canDragX = false;
                     }
                 }
                 else
@@ -126,6 +129,7 @@ public class btnControl : MonoBehaviour
                     if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
                     {
                         sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
+                        sp.GetComponent<thisDrag>().canDragZ = false;
                     }
                 }
             }
