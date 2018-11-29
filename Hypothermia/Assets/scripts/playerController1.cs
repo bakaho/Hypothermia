@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
+using Random = UnityEngine.Random;
 
 public class playerController1 : NetworkBehaviour {
     //player basic settings for moving
@@ -13,6 +14,8 @@ public class playerController1 : NetworkBehaviour {
     private Vector3 moveDir = Vector3.zero;
     public static bool moving;
     public static bool isAlive = true;
+
+    private GameObject newPuz;
 
     public myJoystick joystick;
     public static bool showBar = true; 
@@ -186,8 +189,14 @@ public class playerController1 : NetworkBehaviour {
 
     public override void OnStartLocalPlayer()
     {
+        print("start local");
         //set the local players skin to differ ot from other characters
         //GetComponent<MeshRenderer>().material.color = Color.grey;
+        var index = Random.Range(0, themeSet.Length);
+        themePuz = themeSet[index];
+        Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
+        newPuz = (GameObject)Instantiate(puzPrefabs[index], new Vector3(2.8f,-1.2f,28), spawnRot) as GameObject;
+        newPuz.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
     }
 
