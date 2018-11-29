@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class puzzleActive : MonoBehaviour {
+    static public bool roundClear = false;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,9 @@ public class puzzleActive : MonoBehaviour {
                     {
                         Renderer rend = GetComponentInChildren<Renderer>();
                         rend.enabled = true;
+                        roundClear = true;
+
+
                     }
                     //this.gameObject.SetActive(true);
                 }

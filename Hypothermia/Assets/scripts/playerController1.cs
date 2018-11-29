@@ -15,7 +15,7 @@ public class playerController1 : NetworkBehaviour {
     public static bool moving;
     public static bool isAlive = true;
 
-    private GameObject newPuz;
+    public GameObject newPuz;
 
     public myJoystick joystick;
     public static bool showBar = true; 
@@ -50,7 +50,6 @@ public class playerController1 : NetworkBehaviour {
     private float dist;
 
     static Animator anim;
-
 
 
 
@@ -177,6 +176,11 @@ public class playerController1 : NetworkBehaviour {
 
             //-----------------------------------
 
+            if(puzzleActive.roundClear){
+                generateTheme();
+                puzzleActive.roundClear = false;
+            }
+
 
 
         }
@@ -192,12 +196,25 @@ public class playerController1 : NetworkBehaviour {
         print("start local");
         //set the local players skin to differ ot from other characters
         //GetComponent<MeshRenderer>().material.color = Color.grey;
-        var index = Random.Range(0, themeSet.Length);
-        themePuz = themeSet[index];
-        Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
-        newPuz = (GameObject)Instantiate(puzPrefabs[index], new Vector3(2.8f,-1.2f,28), spawnRot) as GameObject;
-        newPuz.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
+        generateTheme();
+        //newPuz.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+
+    }
+
+    public void generateTheme(){
+        //if (!isLocalPlayer)
+        //{
+            if (newPuz != null)
+            {
+                Destroy(newPuz);
+                newPuz = null;
+            }
+            var index = Random.Range(0, themeSet.Length);
+            themePuz = themeSet[index];
+            Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
+            newPuz = (GameObject)Instantiate(puzPrefabs[index], new Vector3(230f, 31.25f, -217f), spawnRot) as GameObject;
+        //}
     }
 
     //check trigger

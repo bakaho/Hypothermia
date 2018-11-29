@@ -10,9 +10,50 @@ public class puzzleView : MonoBehaviour {
     Touch initTouch;
     Vector3 initMouse;
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	private void Start()
+	{
+        uiCam = GameObject.FindWithTag("uiCam").GetComponent<Camera>();
+	}
+	void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            initMouse = Input.mousePosition;
+            Ray ray = uiCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.gameObject == this.gameObject)
+                {
+                    print("hit!");
+                    rotateAllow = true;
+                }
+            }
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            float xMoved = Input.mousePosition.x - initMouse.x;
+            float yMoved = Input.mousePosition.y - initMouse.y;
+            float distance = Mathf.Sqrt((xMoved * xMoved) + (xMoved * xMoved));
+            if (rotateAllow)
+            {
+                float rotX = xMoved / 5f * rotSpeed * Mathf.Deg2Rad;
+                float rotY = yMoved / 5f * rotSpeed * Mathf.Deg2Rad;
+
+                transform.Rotate(Vector3.up, -rotX);
+                transform.Rotate(Vector3.right, rotY);
+            }
+
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            rotateAllow = false;
+        }
+
+
+
+        //-------only for touch--------
         //foreach (Touch t in Input.touches)
         //{
         //    if (t.phase == TouchPhase.Began)
@@ -48,39 +89,5 @@ public class puzzleView : MonoBehaviour {
         //        rotateAllow = false;
         //    }
         //}
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            initMouse = Input.mousePosition;
-            Ray ray = uiCam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.transform.gameObject == this.gameObject)
-                {
-                    print("hit!");
-                    rotateAllow = true;
-                }
-            }
-        }
-        else if (Input.GetMouseButton(0))
-        {
-            float xMoved = Input.mousePosition.x - initMouse.x;
-            float yMoved = Input.mousePosition.y - initMouse.y;
-            float distance = Mathf.Sqrt((xMoved * xMoved) + (xMoved * xMoved));
-            if (rotateAllow)
-            {
-                float rotX = xMoved / 5f * rotSpeed * Mathf.Deg2Rad;
-                float rotY = yMoved / 5f * rotSpeed * Mathf.Deg2Rad;
-
-                transform.Rotate(Vector3.up, -rotX);
-                transform.Rotate(Vector3.right, rotY);
-            }
-
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            rotateAllow = false;
-        }
     }
 }
