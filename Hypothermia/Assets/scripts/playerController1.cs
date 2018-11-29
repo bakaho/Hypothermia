@@ -132,6 +132,8 @@ public class playerController1 : NetworkBehaviour {
             GameObject[] players;
             //search for all of the players
             players = GameObject.FindGameObjectsWithTag("Player");
+            print(players.Length);
+            float closestDis = 100;
             foreach (GameObject thePlayer in players)
             {
                 //and the new comer to the list of met players
@@ -143,36 +145,49 @@ public class playerController1 : NetworkBehaviour {
 
                 //calculate distance between
                 dist = Vector3.Distance(transform.position, thePlayer.transform.position);
+                if (dist < closestDis && dist > 0.5f){
+                    closestDis = dist;
+                }
 
                 //if too close, calculate time
-                if (dist < 2 && dist > 0)
+                if (dist < 2f && dist > 0.1f)
                 {
 
                     timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] += 1;
 
                     print("close");
                     char_tempreture.temp += tempAdd;
-
-                }
-
-                //if too close for some time
-                if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 200 && dist < 5 && dist > 0)
-                {
-                    print("too long");
-                    //add force to bounce back
                     GetComponent<Rigidbody>().AddForce(((transform.position - thePlayer.transform.position).normalized) * theForce);
-
                     //if try to deny the force, decrease energy
                     char_energy.energy -= 0.5f;
-                }
-
-                //if far enough, decrease 'close time'
-                if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 0 && dist > 30)
-                {
-                    timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]--;
-                    print(timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]);
 
                 }
+                transform.GetChild(3).gameObject.GetComponent<Light>().range = 3.5f;
+                //gameObject.GetComponent<Light>().range = 10f;
+
+                ////if too close for some time
+                //if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 200 && dist < 5 && dist > 0)
+                //{
+                //    print("too long");
+                //    //add force to bounce back
+                //    GetComponent<Rigidbody>().AddForce(((transform.position - thePlayer.transform.position).normalized) * theForce);
+
+                //    //if try to deny the force, decrease energy
+                //    char_energy.energy -= 0.5f;
+                //}
+
+                ////if far enough, decrease 'close time'
+                //if (timer[met.FindIndex(i => i == thePlayer.GetInstanceID())] > 0 && dist > 30)
+                //{
+                //    timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]--;
+                //    print(timer[met.FindIndex(i => i == thePlayer.GetInstanceID())]);
+
+                //}
+            }
+            if (closestDis < 10)
+            {
+                print("change size");
+                transform.GetChild(3).gameObject.GetComponent<Light>().range = 3.5f + (10f - closestDis) * 2f;
             }
 
         }
