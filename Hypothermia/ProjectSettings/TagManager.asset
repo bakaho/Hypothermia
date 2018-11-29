@@ -15,6 +15,7 @@ TagManager:
   - pWall
   - hint1
   - uiCam
+  - pChair
   layers:
   - Default
   - TransparentFX
