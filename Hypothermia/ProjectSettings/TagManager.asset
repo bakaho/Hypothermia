@@ -16,6 +16,7 @@ TagManager:
   - hint1
   - uiCam
   - pChair
+  - frameSlot1
   layers:
   - Default
   - TransparentFX
