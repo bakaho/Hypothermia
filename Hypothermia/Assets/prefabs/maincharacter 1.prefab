@@ -10468,7 +10468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ab6aab4d368473aab249f5313471a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 5
   rotateSpeed: 240
   joystick: {fileID: 0}
   CameraTransform: {fileID: 0}
