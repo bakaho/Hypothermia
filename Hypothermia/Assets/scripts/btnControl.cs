@@ -9,6 +9,8 @@ public class btnControl : MonoBehaviour
         Column
     }
     public thisMode myMode;
+
+    public float coef = 10000f;
     Collider cld;
     GameObject[] stdPuzs;
 
@@ -23,18 +25,46 @@ public class btnControl : MonoBehaviour
         stdPuzs = GameObject.FindGameObjectsWithTag("stadiumPuz");
 	}
 
-    //void Update(){
-    //    foreach(Touch t in Input.touches){
-    //        if(t.phase == TouchPhase.Began){
-    //            initTouch = t;
-    //        }else if(t.phase == TouchPhase.Moved){
-    //            //float xMoved = initTouch
-    //        }else if (t.phase == TouchPhase.Ended)
-    //        {
+    void Update(){
+        foreach(Touch t in Input.touches){
+            if(t.phase == TouchPhase.Began){
+                initTouch = t;
+            }else if(t.phase == TouchPhase.Moved){
+                float xMoved = initTouch.position.x - t.position.x;
+                float yMoved = initTouch.position.y - t.position.y;
+                float distance = Mathf.Sqrt((xMoved * xMoved) + (xMoved * xMoved));
+                bool swipedLeft = Mathf.Abs(xMoved) > Mathf.Abs(yMoved);
+                if(distance > 100){
+                        if (readyDrag)
+                        {
+                            foreach (GameObject sp in stdPuzs)
+                            {
+                                if (myMode == thisMode.Row)
+                                {
+                                    if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
+                                    {
+                                    sp.transform.position += new Vector3(1.5f * Mathf.RoundToInt(-xMoved/coef), 0, 0);
+                                    }
+                                }
+                            if (myMode == thisMode.Column)
+                            {
+                                if (Mathf.Abs(sp.transform.position.x - (this.transform.position.x)) < 0.05f)
+                                {
+                                    sp.transform.position += new Vector3(0, 0, 1.5f * Mathf.RoundToInt(xMoved / coef));
+                                }
+                            }
+                            }
+                        }
+                    
 
-    //        }
-    //    }
-    //}
+                }
+
+            }else if (t.phase == TouchPhase.Ended)
+            {
+                readyDrag = false;
+            }
+        }
+    }
 	
 
     //check trigger
@@ -83,18 +113,20 @@ public class btnControl : MonoBehaviour
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
                         sp.GetComponent<thisDrag>().canDragX = true;
                         //sp.GetComponent<thisDrag>().isLinkedX = true;
+                        Ray ray = Camera.main.ScreenPointToRay(initTouch.position);
+                        RaycastHit hit = new RaycastHit();
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            if (hit.transform.gameObject == sp)
+                            {
+                                print("test ok");
 
-                        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        //RaycastHit hit = new RaycastHit();
-                        //if (Physics.Raycast(ray, out hit))
-                        //{
-                        //    if (hit.transform.gameObject == sp)
-                        //    {
-                        //        print("test ok");
-
-                        //        readyDrag = true;
-                        //    }
-                        //}
+                                readyDrag = true;
+                            }
+                            else{
+                                readyDrag = false;
+                            }
+                        }
 
                     }
                 }
@@ -104,6 +136,21 @@ public class btnControl : MonoBehaviour
                     {
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
                         sp.GetComponent<thisDrag>().canDragZ = true;
+                        Ray ray = Camera.main.ScreenPointToRay(initTouch.position);
+                        RaycastHit hit = new RaycastHit();
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            if (hit.transform.gameObject == sp)
+                            {
+                                print("test ok");
+
+                                readyDrag = true;
+                            }
+                            else
+                            {
+                                readyDrag = false;
+                            }
+                        }
                     }
                 }
             }
@@ -122,6 +169,7 @@ public class btnControl : MonoBehaviour
                     {
                         sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
                         sp.GetComponent<thisDrag>().canDragX = false;
+                        readyDrag = false;
                     }
                 }
                 else
@@ -130,6 +178,7 @@ public class btnControl : MonoBehaviour
                     {
                         sp.transform.localScale = new Vector3(0.3F, 0.3F, 0.3F);
                         sp.GetComponent<thisDrag>().canDragZ = false;
+                        readyDrag = false;
                     }
                 }
             }
