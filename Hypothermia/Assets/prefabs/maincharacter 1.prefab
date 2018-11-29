@@ -10472,6 +10472,14 @@ MonoBehaviour:
   speed: 5
   rotateSpeed: 240
   joystick: {fileID: 0}
+  puzPrefabs:
+  - {fileID: 1119187227083226, guid: 0204017faa32b49e0a03c0ae2a58ddbc, type: 2}
+  - {fileID: 1752769520400042, guid: 9bb5f40dbe8d5419191b2035848fe021, type: 2}
+  - {fileID: 1421385262726228, guid: f1771fe15b95e4ade90e97396dce0755, type: 2}
+  themeSet:
+  - pGrass
+  - pWall
+  - pChair
   CameraTransform: {fileID: 0}
   smoothFactor: 0.03
   tempAdd: 0.02

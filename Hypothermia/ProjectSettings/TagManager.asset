@@ -12,6 +12,7 @@ TagManager:
   - stadiumPuz
   - Pos
   - pGrass
+  - pWall
   layers:
   - Default
   - TransparentFX
