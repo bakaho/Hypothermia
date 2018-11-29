@@ -12,8 +12,6 @@ public class puzzleView : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-
         foreach (Touch t in Input.touches)
         {
             if (t.phase == TouchPhase.Began)
@@ -48,8 +46,6 @@ public class puzzleView : MonoBehaviour {
             {
                 rotateAllow = false;
             }
-
-
         }
     }
 }
