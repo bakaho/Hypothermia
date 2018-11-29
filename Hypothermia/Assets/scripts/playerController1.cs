@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
 public class playerController1 : NetworkBehaviour {
     //player basic settings for moving
@@ -16,6 +17,11 @@ public class playerController1 : NetworkBehaviour {
     public myJoystick joystick;
     public static bool showBar = true; 
     public static Transform PlayerTransform;
+
+    public static String themePuz = "pGrass";
+
+    public GameObject[] puzPrefabs;
+    public String[] themeSet = { "pGrass", "pWall" ,"pChair"};
 
     //public GameObject tombPrefab;
     //public static bool needTomb = false;

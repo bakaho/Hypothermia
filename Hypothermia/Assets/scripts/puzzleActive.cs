@@ -19,9 +19,11 @@ public class puzzleActive : MonoBehaviour {
             {
                 if (hit.transform.gameObject == this.gameObject)
                 {
-                    print("rend!");
-                    Renderer rend = GetComponentInChildren<Renderer>();
-                    rend.enabled = true;
+                    if (this.gameObject.CompareTag(playerController1.themePuz))
+                    {
+                        Renderer rend = GetComponentInChildren<Renderer>();
+                        rend.enabled = true;
+                    }
                     //this.gameObject.SetActive(true);
                 }
             }
