@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class btnControl : MonoBehaviour {
+public class btnControl : MonoBehaviour
+{
     public enum thisMode{
         Row,
         Column
@@ -73,23 +74,27 @@ public class btnControl : MonoBehaviour {
             foreach (GameObject sp in stdPuzs)
             {
                 //print("!!!!!!!");
+                readyDrag = true;
                 if (myMode == thisMode.Row)
                 {
                     if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
                     {
                         sp.transform.localScale = new Vector3(0.2F, 0.2F, 0.2F);
+                        sp.GetComponent<thisDrag>().canDragX = true;
+                        sp.GetComponent<thisDrag>().isLinked = true;
 
-                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        RaycastHit hit = new RaycastHit();
-                        if (Physics.Raycast(ray, out hit))
-                        {
-                            if (hit.transform.gameObject == sp)
-                            {
-                                print("test ok");
+                        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        //RaycastHit hit = new RaycastHit();
+                        //if (Physics.Raycast(ray, out hit))
+                        //{
+                        //    if (hit.transform.gameObject == sp)
+                        //    {
+                        //        print("test ok");
 
-                                readyDrag = true;
-                            }
-                        }
+                        //        readyDrag = true;
+                        //    }
+                        //}
+
                     }
                 }
                 else
@@ -142,5 +147,8 @@ public class btnControl : MonoBehaviour {
     //            }
     //        }
     //    }
+    //}
+
+
     //}
 }
