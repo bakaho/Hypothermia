@@ -228,6 +228,7 @@ public class playerController1 : NetworkBehaviour {
         if (other.gameObject.CompareTag("hint1"))
         {
             other.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            other.gameObject.transform.GetChild(2).gameObject.SetActive(true);
 
         }
 
@@ -243,6 +244,7 @@ public class playerController1 : NetworkBehaviour {
         if (other.gameObject.CompareTag("hint1"))
         {
             other.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            other.gameObject.transform.GetChild(2).gameObject.SetActive(true);
 
         }
     }
@@ -256,6 +258,7 @@ public class playerController1 : NetworkBehaviour {
         if (other.gameObject.CompareTag("hint1"))
         {
             other.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            other.gameObject.transform.GetChild(2).gameObject.SetActive(false);
 
         }
     }
