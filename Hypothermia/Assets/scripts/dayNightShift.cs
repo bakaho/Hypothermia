@@ -6,6 +6,14 @@ using UnityEngine.Networking;
 public class dayNightShift : MonoBehaviour {
     public bool isNight = false;
     public float daySpeed = 1;
+    public enum mySeason
+    {
+        Spring,
+        Summer,
+        Fall,
+        Winter
+    }
+    public mySeason season;
 
     // Update is called once per frame
     //public override void OnStartServer()

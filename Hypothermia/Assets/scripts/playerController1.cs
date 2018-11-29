@@ -190,7 +190,7 @@ public class playerController1 : NetworkBehaviour {
         if (other.gameObject.CompareTag("buttonPuz"))
         {
             other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, other.gameObject.transform.position.y + 1.8f, 0);
-            Debug.Log("but");
+
         }
     }
 
@@ -199,7 +199,7 @@ public class playerController1 : NetworkBehaviour {
         if (other.gameObject.CompareTag("buttonPuz"))
         {
             other.gameObject.transform.position = other.gameObject.transform.position - new Vector3(0, other.gameObject.transform.position.y+1.8f, 0);
-            Debug.Log("but");
+
         }
     }
 
