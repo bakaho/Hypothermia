@@ -9,6 +9,7 @@ public class thisDrag : MonoBehaviour {
     public bool isLinkedZ = false;
 
     GameObject[] stdPuzs;
+    //-----------this class is only for PC-----------
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class thisDrag : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        //if is linked, move along with the dragged object
          if (isLinkedX)
          {
   
@@ -33,6 +35,7 @@ public class thisDrag : MonoBehaviour {
 		
 	}
 
+    //if the current cube is being dragged
     void OnMouseDrag()
     {
         //move the cube along with the mouse
@@ -40,11 +43,13 @@ public class thisDrag : MonoBehaviour {
             this.transform.position += new Vector3(1.5f * Mathf.RoundToInt(Input.GetAxis("Mouse X")),0 , 0);
             foreach (GameObject sp in stdPuzs)
             {
+                //if in the same row, add to linkage
                 if (Mathf.Abs(sp.transform.position.z - (this.transform.position.z)) < 0.05f)
                 {
                     sp.GetComponent<thisDrag>().isLinkedX = true;
                 }
-            }  
+            } 
+            //turn of its linkage of itself
             isLinkedX = false;
         }
 
@@ -65,7 +70,7 @@ public class thisDrag : MonoBehaviour {
 
     void OnMouseUp()
     {
-        //move the cube along with the mouse
+        //if let go, turn off everything
         if (canDragX)
         {           
             foreach (GameObject sp in stdPuzs)

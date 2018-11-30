@@ -17,6 +17,9 @@ public class puzzleView : MonoBehaviour {
 	}
 	void Update()
     {
+        //rotate to play around with the floating 3d ui
+
+        //if start drag from inside of the object
         if (Input.GetMouseButtonDown(0))
         {
             initMouse = Input.mousePosition;
@@ -46,6 +49,7 @@ public class puzzleView : MonoBehaviour {
             }
 
         }
+        //if let go, start over again
         else if (Input.GetMouseButtonUp(0))
         {
             rotateAllow = false;

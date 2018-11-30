@@ -13,6 +13,7 @@ public class puzzleActive : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //if click on the right place
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -23,13 +24,14 @@ public class puzzleActive : MonoBehaviour {
                 {
                     if (this.gameObject.CompareTag(playerController1.themePuz))
                     {
+                        //turn on the mesh renderer of the object
                         Renderer rend = GetComponentInChildren<Renderer>();
                         rend.enabled = true;
                         roundClear = true;
 
 
                     }
-                    //this.gameObject.SetActive(true);
+
                 }
             }
         }

@@ -202,6 +202,7 @@ public class playerController1 : NetworkBehaviour {
 
     }
 
+    //generate the new theme after destroy the old one
     public void generateTheme(){
         //if (!isLocalPlayer)
         //{
@@ -218,6 +219,7 @@ public class playerController1 : NetworkBehaviour {
     }
 
     //check trigger
+    //button and hint effects
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("buttonPuz"))

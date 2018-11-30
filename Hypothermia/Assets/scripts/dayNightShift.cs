@@ -39,5 +39,6 @@ public class dayNightShift : MonoBehaviour {
                 GetComponent<Light>().intensity += 0.01f;
             }
         }
+        //TODO: the season change
 	}
 }
